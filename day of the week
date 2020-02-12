@@ -1,0 +1,4 @@
+from datetime import date,datetime
+x,y,z = map(int,input().split("/"))
+dat = date(z,y,x)
+print(dat.strftime("%A"))
