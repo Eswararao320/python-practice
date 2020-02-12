@@ -1,0 +1,12 @@
+import statistics
+x = list(map(float,input().split(",")))
+mean_value = statistics.mean(x)
+print(round(mean_value,2))
+variance_value = statistics.variance(x)
+print(round(variance_value,2))
+standard_deviation = statistics.stdev(x)
+print(round(standard_deviation,2))
+harmonic_mean_value = statistics.harmonic_mean(x)
+print(round(harmonic_mean_value,2))
+n = harmonic_mean_value/mean_value
+print(round(n,2))
