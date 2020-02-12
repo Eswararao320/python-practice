@@ -1,0 +1,5 @@
+import requests
+import json
+li = requests.get('https://hacker-news.firebaseio.com/v0/item/{}.json'.format(input()))
+li = li.json()
+print(li['title'])
