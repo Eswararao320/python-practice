@@ -1,0 +1,10 @@
+x = int(input())
+for i in range(1,x):
+    print(("*"*(i)).ljust(x," "),end="")
+    print(("*"*(i)).rjust(x-1," "),end="")
+    print()
+print("*"*(2*x-1))
+for i in range(x-1,0,-1):
+    print(("*"*(i)).ljust(x," "),end="")
+    print(("*"*(i)).rjust(x-1," "),end="")
+    print()
