@@ -1,0 +1,61 @@
+from collections import OrderedDict
+n = int(input())
+dic = {}
+dicc = {}
+dik={}
+for i in range(n):
+    x = input().split(";")
+    if x[0] not in dic:
+        dic[x[0]] = [x[2]]
+        dicc[x[0]] = 0
+    else:
+        dic[x[0]].append(x[2])
+    if x[1] not in dic:
+        if(x[2] == 'win'):
+            dic[x[1]] = ['loss']
+            dicc[x[1]] = 0
+        elif(x[2] == 'draw'):
+            dic[x[1]] = ['draw']
+            dicc[x[1]] = 0
+        elif(x[2] == 'loss'):
+            dic[x[1]] = ['win']
+            dicc[x[1]] = 0
+    else:
+        if(x[2] == 'win'):
+            dic[x[1]].append('loss')
+        elif(x[2] == 'draw'):
+            dic[x[1]].append('draw')
+        elif(x[2] == 'loss'):
+            dic[x[1]].append('win')
+p = sorted(dicc)
+for i in dic:
+    for j in dic[i]:
+        if j == 'win':
+            dicc[i] +=3
+        elif j == 'draw':
+            dicc[i] +=1
+for i in p:
+    dik[i] = dicc[i]
+c = sorted(dicc.values(),reverse = True)
+f = []
+for i in c:
+    for key,value in dik.items():
+        if value == i:
+            f.append(key)
+            dik[key] = -1
+            break
+t = 'Team'
+m = 'MP'
+w = 'W'
+d = 'D'
+l = 'L'
+p = 'P'
+print(f"{'Team'.ljust(23)} | {'MP'.rjust(2)} | {'W'.rjust(2)} | {'D'.rjust(2)} | {'L'.rjust(2)} | {'P'.rjust(2)} |")
+for i in f:
+    t = i;
+    m = str(len(dic[i]))
+    w = str(dic[i].count('win'))
+    d = str(dic[i].count('draw'))
+    l = str(dic[i].count('loss'))
+    p = str(dicc[i])
+    print(f"{t.ljust(23)} | {m.rjust(2)} | {w.rjust(2)} | {d.rjust(2)} | {l.rjust(2)} | {p.rjust(2)} |")
