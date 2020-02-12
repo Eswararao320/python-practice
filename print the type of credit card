@@ -1,0 +1,18 @@
+import re
+visa_credit_card_pattern = "^4(\d{3}[\s\-]\d{4}[\s\-]\d{4}[\s\-]\d{4}|\d{3}[\s\-]\d{4}[\s\-]\d{4}[\s\-]\d{1})$"
+american_express_credit_card = "^(34|37)\d{2}[\s\-]\d{4}[\s\-]\d{4}[\s\-]\d{3}$"
+master_credit_card = "^(51|52|53|54|55)\d{2}[\s\-]\d{4}[\s\-]\d{4}[\s\-]\d{4}$"
+discover_credit_card = "^6011[\s\-]\d{4}[\s\-]\d{4}[\s\-]\d{4}$"
+x = int(input())
+for i in range(x):
+    input_details= input()
+    if re.match(visa_credit_card_pattern,input_details):
+        print("Visa")
+    elif re.match(american_express_credit_card,input_details):
+        print("American Express")
+    elif re.match(master_credit_card,input_details):
+        print("MasterCard")
+    elif re.match(discover_credit_card,input_details):
+        print("Discover")
+    else:
+        print("Unsupported Card")
