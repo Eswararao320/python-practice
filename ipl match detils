@@ -1,0 +1,112 @@
+sample_output = """[
+    {
+        "Team": "Chennai Super Kings",
+        "Matches Played": 2,
+        "Total Points": 4,
+        "Won": 1,
+        "Tied": 1,
+        "Lost": 0
+    },
+    {
+        "Team": "Mumbai Indians",
+        "Matches Played": 2,
+        "Total Points": 4,
+        "Won": 1,
+        "Tied": 1,
+        "Lost": 0
+    },
+    {
+        "Team": "Delhi Capitals",
+        "Matches Played": 3,
+        "Total Points": 3,
+        "Won": 0,
+        "Tied": 3,
+        "Lost": 0
+    },
+    {
+        "Team": "Rajasthan Royals",
+        "Matches Played": 2,
+        "Total Points": 3,
+        "Won": 1,
+        "Tied": 0,
+        "Lost": 1
+    },
+    {
+        "Team": "Rajasthan Royal",
+        "Matches Played": 1,
+        "Total Points": 1,
+        "Won": 0,
+        "Tied": 1,
+        "Lost": 0
+    },
+    {
+        "Team": "Kolkata Knight Riders",
+        "Matches Played": 1,
+        "Total Points": 0,
+        "Won": 0,
+        "Tied": 0,
+        "Lost": 1
+    },
+    {
+        "Team": "Sunrisers Hyderabad",
+        "Matches Played": 1,
+        "Total Points": 0,
+        "Won": 0,
+        "Tied": 0,
+        "Lost": 1
+    }
+]
+"""
+import json
+x = int(input())
+d = {}
+for i in range(x):
+    p,q,r = input().split(";")
+    if p not in d:
+        d[p]=[r]
+    else:
+        d[p].append(r)
+    if q not in d:
+        if r == 'win':
+            d[q] = ['loss']
+        elif r == 'loss':
+            d[q] = ['win']
+        elif r == 'draw':
+            d[q] = [r]
+    else:
+        if r == 'win':
+            d[q].append('loss')
+        elif r == 'loss':
+            d[q].append('win')
+        elif r == 'draw':
+            d[q].append('draw')
+n = []
+s = {}
+for i,j in d.items():
+    l = {}
+    l["Team"] = i
+    l["Matches Played"] = len(j)
+    m = 0
+    for k in j:
+        if k == 'win':
+            m +=3
+        elif k == 'draw':
+            m +=1
+    l["Total Points"] = m
+    s[i] = m
+    l["Won"] = j.count('win')
+    l["Tied"] = j.count('draw')
+    l["Lost"] = j.count('loss')
+    #print(l)
+    n.append(l)
+#print(s)
+s = dict(sorted(s.items(),key = lambda x : x[0]))
+s = dict(sorted(s.items(),key = lambda x : -x[1]))
+g = []
+for i,j in s.items():
+    for k in n:
+        if k["Team"] == i:
+            g.append(k)
+            break
+p = json.dumps(g,indent=4)
+print(p)
