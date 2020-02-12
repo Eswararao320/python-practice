@@ -1,0 +1,21 @@
+from datetime import datetime,timedelta,timezone
+from time import gmtime
+n = int(input())
+for i in range(n):
+    dt = input()
+    t_zone = input()
+    if len(dt) == 30:
+        date = datetime.strptime(dt,"%a %d %b %Y %H:%M:%S %z")
+    else:
+        dt = dt+" +0000"
+        date = datetime.strptime(dt,"%a %d %b %Y %H:%M:%S %z")
+    if len(t_zone) == 5:
+        h = datetime.strptime(t_zone,"%z")
+    else:
+        s = "+"+t_zone
+        h = datetime.strptime(s,"%z")
+    j = h.tzinfo
+    #print(j)
+    g = date.astimezone(j)
+    #print(g)
+    print(datetime.strftime(g,"%a %d %b %Y %H:%M:%S %z"))
