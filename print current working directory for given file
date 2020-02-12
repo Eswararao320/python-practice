@@ -1,0 +1,14 @@
+import os
+x = int(input())
+l = []
+for i in range(x):
+    y,z = input().split(" ")
+    z = z.split("/")
+    for p in z:
+        if p != ".." and p!='.' and p !='':
+            l.append(p)
+        elif p == "..":
+            l.pop()
+        elif p == "":
+            l = []
+    print("/"+"/".join(l))
