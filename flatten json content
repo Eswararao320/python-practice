@@ -1,0 +1,19 @@
+import json,fractions,array
+def fj(x):
+    out = {}
+    def flat(x,name=''):
+        if type(x) is dict:
+            for a in x:
+                #print(x[a])
+                flat(x[a],name+a+'_')
+        else:
+            #print(x)
+            out[name[:-1]] = x
+    flat(x)
+    return out
+n = int(input())
+for i in range(n):
+    s = input()
+    s = json.loads(s)
+    sd = fj(s)
+    print(json.dumps(sd))
