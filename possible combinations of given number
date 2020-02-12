@@ -1,0 +1,10 @@
+from itertools import combinations
+x = list(map(float,input().split(",")))
+x.sort()
+combo_list = list(combinations(x,4))
+for i in combo_list:
+    s = ""
+    for j in range(len(i)):
+        s+="{:.1f}".format(i[j])
+        s+=","
+    print(s[:-1])
