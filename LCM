@@ -1,0 +1,46 @@
+    ;;;;;;;;;FOR FIRST MODEL;;;;;;;
+    
+    large=int(input())
+small=int(input())
+new=0
+for_while_check=1
+n=2
+if large<small:
+    new=large
+    large=small
+    small=new
+if large%small==0:
+    print(large)
+else:
+    while for_while_check!=0:
+        lcm=large*n
+        if lcm%small==0:
+            print(lcm)
+            for_while_check=0
+        else:
+            n=n+1
+            
+ ;;;;;;;;;;;second model;;;;;;;;;
+ 
+ large=int(input())
+small=int(input())
+new=0
+gcd=1
+if large<small:
+    new=large
+    large=small
+    small=new
+
+for i in range(1,large+1):
+    if large%i ==0 and small%i==0:
+        common_div=i
+        if gcd<common_div:
+            gcd=common_div
+print((large*small)//gcd) 
+
+
+;;;;;;;;one line formula;;;;;;;
+
+LCM=(a*b)
+    
+ 
