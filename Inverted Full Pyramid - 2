@@ -1,0 +1,13 @@
+n=int(input())
+N=n
+space=""
+num=""
+for i in range(1,n+1):
+    for j in range(1,N+1):
+        space=(i-1)*" "
+        num=num+str(j)+" "
+    print(space+num)
+    N=N-1
+    num=""
+    
+    
