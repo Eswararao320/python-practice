@@ -1,0 +1,17 @@
+n=int(input())
+line=n*"* "
+print(line)
+length=len(line)
+c=0
+for i in range(1,n):
+    for j in range(1,length):
+        if j==i+1 or j==length-2:
+            print("*",end='')
+            c=c+1
+        else:
+            print(" ",end='')
+            c=c+1
+    length=c
+    c=0
+    print()
+        
