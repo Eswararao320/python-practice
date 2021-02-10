@@ -1,0 +1,11 @@
+string=input()
+u_string=string.upper()
+length=len(string)
+is_digit=""
+for i in range(0,length):
+    is_digit=string[i].isdigit()
+    if is_digit == True :
+        continue
+    elif u_string[i]==string[i]:
+        print(string[i])
+        break
