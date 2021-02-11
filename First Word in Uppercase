@@ -1,0 +1,11 @@
+string=input()
+length=len(string)
+first_word=""
+c=0
+for i in range(0,length):
+    if  string[i]==" ":
+        break
+    else:
+        first_word=first_word+string[i].upper()
+        c=c+1
+print(first_word+string[c:])
