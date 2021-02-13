@@ -1,0 +1,29 @@
+n=int(input())
+N=n*2
+left_star=0
+right_star=0
+#FOR FIRST LINE
+print(N*"* ")
+#FOR TOP DIAMOND
+for i in range(1,n):
+    for j in range(1,N+1):
+        left_star=n-i
+        right_star=n+i
+        if j<=left_star or j>right_star:
+            print("*",end=' ')
+        else:
+            print(" ",end=' ')
+    print()
+    
+#FOR BOTTOM DIAMOND
+right_star=N
+for i in range(1,n):
+    for j in range(1,N+1):
+        if j<=i or j>=right_star:
+            print("*",end=' ')
+        else:
+            print(" ",end=' ')
+    right_star=right_star-1
+    print()
+#FOR LAST LINE
+print(N*"* ")
