@@ -1,0 +1,19 @@
+str_1=input()
+str_2=input()
+length_2=len(str_2)
+c=0
+for i in range(0,length_2):
+    length_1=len(str_1)
+    for j in range(0,length_1):
+        if str_2[i]==str_1[j]:
+            str_1=str_1[j:]
+            #print(str_1)
+            c+=1
+            break
+if length_2==c:
+    print("Yes")
+else:
+    print("No")
+        
+    
+
