@@ -1,0 +1,8 @@
+string=input()
+string_split=string.split()
+#print(string_split)
+reverse_sentence=""
+for i in range(len(string_split)):
+    reverse_sentence =reverse_sentence+string_split[i][::-1]+" "
+#reverse_sentence=reverse_sentence.strip()    
+print(reverse_sentence)
