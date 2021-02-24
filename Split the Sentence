@@ -1,0 +1,4 @@
+string=input()
+split_string=string.split()
+for i in range(len(split_string)):
+    print(split_string[i])
