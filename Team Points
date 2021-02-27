@@ -1,0 +1,15 @@
+def leauge_points(arg_1,arg_2):
+    return int(arg_1)*int(arg_2)
+        
+
+
+team_status=input().split(",")
+total=0
+for i in range(len(team_status)):
+    if i==0:
+        total=leauge_points(team_status[i],4)
+    elif i==1:
+        total=total+leauge_points(team_status[i],2)
+    else:
+        total=total+leauge_points(team_status[i],-1)
+print(total)        
