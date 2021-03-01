@@ -1,0 +1,10 @@
+def k_th_largest(list_a,n):
+    for i in range(len(list_a)):
+        list_a[i]=int(list_a[i])
+    list_a=sorted(list_a,reverse=False)
+    print(list_a[n-1])
+
+
+list_a=input().split(",")
+n=int(input())
+k_th_largest(list_a,n)
