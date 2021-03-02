@@ -7,5 +7,8 @@ def fibonacci(n,a=0,b=1):
     return c    
 n = int(input())
 # call the fibonacci function
-result=fibonacci(n)
-print(result)
+if n==1:
+    print(1)
+else:    
+    result=fibonacci(n)
+    print(result)
