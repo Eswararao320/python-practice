@@ -1,0 +1,32 @@
+def append(n,list_a):
+    list_a.append(n)
+    return list_a
+def insert(a,b,list_a):
+    list_a.insert(a,b)
+    return list_a
+def pop(list_a):
+    return list_a.pop()
+def remove(n,list_a):  
+    return list_a.remove(n)
+def sort(list_a):
+    return list_a.sort()
+def print_(list_a):    
+    print(list_a)
+num=int(input())
+list_a=[]
+for i in range(num):
+    inpt=input().split()
+    if len(inpt)==1:
+        if inpt[0]=="print":
+            print_(list_a)
+        elif inpt[0]=="sort":
+            sort(list_a)
+        else:
+            pop(list_a)
+    elif inpt[0]=="append":
+        append(int(inpt[1]),list_a)
+    elif inpt[0]=="remove":
+        remove(int(inpt[1]),list_a)
+    elif inpt[0]=="insert":
+        insert(int(inpt[1]),int(inpt[2]),list_a)
+   
