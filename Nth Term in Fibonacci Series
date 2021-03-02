@@ -1,0 +1,11 @@
+def fibonacci(n,a=0,b=1):
+    # Complete this function
+    for i in range(n-1):
+        c=a+b
+        a=b
+        b=c
+    return c    
+n = int(input())
+# call the fibonacci function
+result=fibonacci(n)
+print(result)
