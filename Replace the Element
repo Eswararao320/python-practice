@@ -1,0 +1,8 @@
+ num_list = [(10, 20, 30), (1, 2), (5, 10, 15, 45)]
+# Write your code here
+num=int(input())
+for i in range(len(num_list)):
+    num_list[i]=list(num_list[i])
+    num_list[i][-1]=int(num)
+    num_list[i]=tuple(num_list[i])
+print(num_list)
