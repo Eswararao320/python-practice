@@ -1,0 +1,10 @@
+set_a = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100}
+# Write your code here
+set_b=input().split()
+for i in range(len(set_b)):
+    set_b[i]=int(set_b[i])
+set_b=set(set_b)
+result=set_a-set_b  #set_a.difference(set_b)
+result=list(result)
+result.sort()
+print(result)
