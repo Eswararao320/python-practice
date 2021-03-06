@@ -1,0 +1,6 @@
+intput=input().split()
+for i in range(len(intput)):
+    intput[i]=int(intput[i])
+intput=list(set(intput)) 
+intput.sort()
+print(intput)
