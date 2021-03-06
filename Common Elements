@@ -1,0 +1,11 @@
+str_1=input().split(",")
+str_2=input().split(",")
+for i in range(len(str_1)):
+    str_1[i]=int(str_1[i])
+for i in range(len(str_2)):
+    str_2[i]=int(str_2[i]) 
+str_2=set(str_2)
+str_1=set(str_1)
+result=list(str_1&str_2)
+result.sort()
+print(result)
