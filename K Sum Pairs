@@ -1,0 +1,29 @@
+5,3,7,9,5
+
+list_a=input().split(",")
+n=int(input())
+sub_tuple=()
+new_list=[]
+sub_list=[]
+for i in range(len(list_a)):
+    list_a[i]=int(list_a[i])
+for i in range(len(list_a)):
+    for j in range(len(list_a)):
+        if i==j:
+            continue;
+        elif (list_a[i]+list_a[j])==n:
+            sub_list.append(list_a[i])
+            sub_list.append(list_a[j])
+            sub_list.sort()
+            sub_tuple=tuple(sub_list)
+            new_list.append(sub_tuple)
+            sub_list=[]
+new_list.sort() 
+uniq_set=set()
+for i in new_list:
+    uniq_set.add(i)
+uniq_list=list(uniq_set)
+uniq_list.sort()
+for i in uniq_list:
+    print(i)
+            
