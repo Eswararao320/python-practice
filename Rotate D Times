@@ -1,0 +1,11 @@
+list_a=input().split(",")
+#print(list_a)
+n=int(input())
+length=len(list_a)
+result=[]
+rotation_start_index=(n%length)
+for i in range(rotation_start_index,length):
+    result.append(int(list_a[i]))
+for i in range(rotation_start_index):
+    result.append(int(list_a[i]))
+print(result)    
