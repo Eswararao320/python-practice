@@ -1,0 +1,15 @@
+set_a=input().split()
+set_a=set(set_a)
+set_b=input().split()
+set_b=set(set_b)
+set_c=input().split()
+set_c=set(set_c)
+common_elements=set_a&set_b&set_c
+
+common_elements=list(common_elements)
+
+for i in range(len(common_elements)):
+    common_elements[i]=int(common_elements[i])
+    
+common_elements.sort()
+print(common_elements)
