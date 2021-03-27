@@ -1,0 +1,12 @@
+num_set = {1, 2, 3, 4, 5, 6, 7, 8, 9}
+input_set=input().split()
+for i in range(len(input_set)):
+    input_set[i]=int(input_set[i])
+input_set=set(input_set)
+
+if num_set.issubset(input_set):
+    print("Subset")
+elif num_set.issuperset(input_set):
+    print("Superset")
+else:
+    print("Disjoint Set")
