@@ -1,0 +1,6 @@
+num_list = [(2, 4, 6, 8), (5, 15, 25, 35), (7, 14, 21)]
+nested_list=[]
+num=int(input())
+for item in range(len(num_list)):
+    if (num  in num_list[item]):
+        print(item,num_list[item].index(num))
