@@ -1,0 +1,6 @@
+def get_transpose_of_matrix(matrix, m, n,result_list=[]):
+    for i in range(n):
+        sub_list=[]
+        for j in range(len(matrix)):
+            sub_list.append(matrix[j][i])
+        print(sub_list)    
